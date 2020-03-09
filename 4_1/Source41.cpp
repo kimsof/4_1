@@ -60,13 +60,7 @@ int main()
 		for (int i = 0; i < number; i++) {
 			vector.push_back(uid(gen));
 		}
-		
 
-		std::array <int, 1000> array;
-		for (int i = 0; i < array.size(); i++) {
-			array[i] = vector[i];
-		}
-		
 		{
 			Timer timer_for_vector;
 			std::sort(vector.begin(), vector.end());
@@ -74,7 +68,11 @@ int main()
 
 		{
 			Timer timer_for_array;
-			std::sort(array.begin(), array.end());
+		std::array <int, 500000> array;
+		for (int i = 0; i < array.size(); i++) {
+			array[i] = vector[i];
+		}
+		std::sort(array.begin(), array.end());
 		}
 
 		{
