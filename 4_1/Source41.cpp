@@ -62,11 +62,6 @@ int main()
 		}
 
 		{
-			Timer timer_for_vector;
-			std::sort(vector.begin(), vector.end());
-		}
-
-		{
 			Timer timer_for_array;
 		std::array <int, 500000> array;
 		for (int i = 0; i < array.size(); i++) {
@@ -81,7 +76,12 @@ int main()
 			for (int i = 0; i < number; i++) {
 			set.insert(vector[i]);
 		}
+
 	}
+		{
+			Timer timer_for_vector;
+			std::sort(vector.begin(), vector.end());
+		}
 	system("pause");
 	return 0;
 }
