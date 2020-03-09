@@ -57,8 +57,13 @@ int main()
 		std::vector <int> vector;
 		std::mt19937 gen(time(0));
 		std::uniform_int_distribution<> uid(0,100);
+
+		{
+			Timer timer_for_vector;
 		for (int i = 0; i < number; i++) {
 			vector.push_back(uid(gen));
+		}
+		std::sort(vector.begin(), vector.end());
 		}
 
 		{
@@ -75,13 +80,9 @@ int main()
 			std::set <int> set;
 			for (int i = 0; i < number; i++) {
 			set.insert(vector[i]);
+			}
 		}
-
-	}
-		{
-			Timer timer_for_vector;
-			std::sort(vector.begin(), vector.end());
-		}
+				
 	system("pause");
 	return 0;
 }
